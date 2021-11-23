@@ -1,0 +1,9 @@
+.bg-card {
+	padding: 2rem 1rem;
+	background-color: white;
+	display: grid;
+	grid-template-columns: repeat(4, 7rem);
+	grid-template-rows: repeat(4, 7rem);
+	grid-gap: 20px;
+	justify-content: center;
+}
