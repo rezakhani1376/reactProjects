@@ -6,7 +6,11 @@ const Card = (props) => {
 			className={classes.card}
 			onClick={props.onClick}
 			id={props.id}
-			style={{ backgroundColor: props.backgroundColor }}
+			style={{
+				backgroundColor: props.backgroundColor,
+				width: "100px",
+				height: "100px",
+			}}
 		>
 			{props.children}
 		</div>
