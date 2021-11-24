@@ -1,14 +1,5 @@
 import { createStore } from "redux";
 
-
-
-const toggleColor = (currentColor) => {
-	if (currentColor === "#b42424")
-		currentColor = "#1aacac";
-	else currentColor = "#b42424"
-	return currentColor;
-}
-
 let DUMMY_CARDS = [
 	{ id: 1, bgColor: "#1aacac" },
 	{ id: 2, bgColor: "#1aacac" },
@@ -30,12 +21,15 @@ let DUMMY_CARDS = [
 
 const changeBackgroundReducer = (state = DUMMY_CARDS, action) => {
 	console.dir(action.type.id);
-	if (action.type.id) {
+	const cardId = +action.type.id;
+	if (cardId) {
 		const NewCards = state.map((card) => {
-			if (card.id == action.type.id)
-				card.bgColor = toggleColor(card.bgColor);
+			if (card.id === cardId) {
+				card.bgColor = "#b42424";
+			}
 			return card;
 		});
+
 		return NewCards;
 	}
 
